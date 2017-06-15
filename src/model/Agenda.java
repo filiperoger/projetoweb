@@ -4,9 +4,17 @@ import java.sql.Time;
 import java.util.Date;
 
 public class Agenda {
+	private Integer agendaId;
 	private Date data;
 	private Time hora;
 	private Paciente paciente;
+	
+	public Integer getAgendaId() {
+		return agendaId;
+	}
+	public void setAgendaId(Integer agendaId) {
+		this.agendaId = agendaId;
+	}
 	
 	public Date getData() {
 		return data;

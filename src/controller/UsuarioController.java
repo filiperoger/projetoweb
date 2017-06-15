@@ -25,7 +25,8 @@ public class UsuarioController extends HttpServlet{
     }
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String forward = "";
+        
+    	String forward = "";
         String action = request.getParameter("action");
  
         if(action.equalsIgnoreCase("deletar")) {
@@ -49,16 +50,17 @@ public class UsuarioController extends HttpServlet{
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Usuario usuario = new Usuario();
+       
+    	Usuario usuario = new Usuario();
         usuario.setNome(request.getParameter("nome"));
         usuario.setEmail(request.getParameter("email"));
         usuario.setSenha(request.getParameter("senha"));
-        String usuarioId = request.getParameter("usuarioId");
+//        String usuarioId = request.getParameter("usuarioId");
  
-        if( usuarioId == null || usuarioId.isEmpty())
+        if( usuario.getUsuarioId() == 0)
             dao.adicionar(usuario);
         else {
-            usuario.setUsuarioId( Integer.parseInt(usuarioId) );
+//            usuario.setUsuarioId(Integer.parseInt(usuarioId));
             dao.alterar(usuario);
         }
         response.sendRedirect("login.jsp");
