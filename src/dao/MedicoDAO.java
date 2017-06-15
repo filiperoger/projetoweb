@@ -96,4 +96,33 @@ public class MedicoDAO {
 		}
 		return medicos;
 	}
+	
+	public Medico buscarPorId(int medicoId) {
+
+		Medico medico = new Medico();
+
+		try {
+
+			String query = "select * from medico where medicoId=?";
+			PreparedStatement preparedStatement = conn.prepareStatement(query);
+
+			preparedStatement.setInt(1, medicoId);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while(resultSet.next()) {
+
+				medico.setMedicoId(resultSet.getInt( "medicoId"));
+				medico.setNome(resultSet.getString("nome"));
+				medico.setCrm(resultSet.getString("crm"));
+			}
+
+			resultSet.close();
+			preparedStatement.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return medico;
+	}
 }

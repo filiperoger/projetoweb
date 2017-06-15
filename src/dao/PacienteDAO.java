@@ -86,16 +86,46 @@ public class PacienteDAO {
 				paciente.setNome(resultSet.getString("nome"));
 				paciente.setCpf(resultSet.getInt("cpf"));
 				paciente.setRg(resultSet.getInt("rg"));
-				
+
 				pacientes.add(paciente);
 			}
-			
+
 			resultSet.close();
 			statement.close();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return pacientes;
+	}
+
+	public Paciente buscarPorId(int pacienteId) {
+
+		Paciente paciente = new Paciente();
+
+		try {
+
+			String query = "select * from paciente where pacienteId=?";
+			PreparedStatement preparedStatement = conn.prepareStatement(query);
+
+			preparedStatement.setInt(1, pacienteId);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while(resultSet.next()) {
+
+				paciente.setPacienteId(resultSet.getInt( "usuarioId"));
+				paciente.setNome(resultSet.getString("nome"));
+				paciente.setCpf(Integer.parseInt(resultSet.getString("cpf")));
+				paciente.setRg(Integer.parseInt(resultSet.getString("rg")));
+			}
+
+			resultSet.close();
+			preparedStatement.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return paciente;
 	}
 }

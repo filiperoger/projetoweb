@@ -63,6 +63,6 @@ public class UsuarioController extends HttpServlet{
 //            usuario.setUsuarioId(Integer.parseInt(usuarioId));
             dao.alterar(usuario);
         }
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("pages/login.jsp");
     }
  }
