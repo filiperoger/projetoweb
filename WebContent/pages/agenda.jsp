@@ -50,7 +50,7 @@
 		<div class="page-header">
 			<h2>Agenda</h2>
 		</div>
-		<form action="PacienteController" method="post">
+		<form action="AgendaController" method="post">
 			<div class="form-group" style="margin-top: 30px;">
 				<label for="nome" class="col-sm-2">Paciente: </label>
 				<div class="col-sm-10">

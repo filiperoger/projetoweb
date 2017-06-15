@@ -50,7 +50,7 @@
 		<div class="page-header">
 			<h2>Usuário</h2>
 		</div>
-		<form action="UsuarioController.do" method="post">
+		<form action="UsuarioController" method="post">
 			<div class="form-group" style="margin-top: 30px;">
 				<label for="nome" class="col-sm-2">Nome: </label>
 				<div class="col-sm-10">
