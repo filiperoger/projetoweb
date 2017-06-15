@@ -23,15 +23,9 @@ public class PacienteController extends HttpServlet {
     public PacienteController() {
         dao = new PacienteDAO();
     }
-	
-//    public PacienteController() {
-//        super();
-//        // TODO Auto-generated constructor stub
-//    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		String forward = "";
         String action = request.getParameter("action");
  
@@ -56,22 +50,17 @@ public class PacienteController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// doGet(request, response);
 		
 		Paciente paciente = new Paciente();
         paciente.setNome(request.getParameter("nome"));
         paciente.setCpf(Integer.parseInt(request.getParameter("cpf")));
         paciente.setRg(Integer.parseInt(request.getParameter("rg")));
-//        String usuarioId = request.getParameter("usuarioId");
  
         if( paciente.getPacienteId() == 0)
             dao.adicionar(paciente);
         else {
-//            usuario.setUsuarioId(Integer.parseInt(usuarioId));
             dao.alterar(paciente);
         }
-        response.sendRedirect("pages/login.jsp");
+        response.sendRedirect("login.jsp");
 	}
-
 }

@@ -17,7 +17,7 @@ public class MedicoController extends HttpServlet {
 
 	private MedicoDAO dao;
 	private static final long serialVersionUID = 1L;
-	public static final String INSERIR = "/pages/medico.jsp";
+	public static final String INSERIR = "/medico.jsp";
 	public static final String LISTAR_MEDICO = "/todosMedicos.jsp";
 	public static final String EDITAR = "/editarMedicos.jsp";
 
@@ -25,14 +25,7 @@ public class MedicoController extends HttpServlet {
 		dao = new MedicoDAO();
 	}
 
-	//    public MedicoController() {
-	//        super();
-	//        // TODO Auto-generated constructor stub
-	//    }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		String forward = "";
 		String action = request.getParameter("action");
@@ -61,22 +54,16 @@ public class MedicoController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// doGet(request, response);
+		
 		Medico medico = new Medico();
         medico.setNome(request.getParameter("nome"));
         medico.setCrm(request.getParameter("crm"));
-        // usuario.setEmail(request.getParameter("email"));
-        // usuario.setSenha(request.getParameter("senha"));
-//        String usuarioId = request.getParameter("usuarioId");
  
         if( medico.getMedicoId() == 0)
             dao.adicionar(medico);
         else {
-//            usuario.setUsuarioId(Integer.parseInt(usuarioId));
             dao.alterar(medico);
         }
-        response.sendRedirect("pages/login.jsp");
+        response.sendRedirect("login.jsp");
     }
-
 }

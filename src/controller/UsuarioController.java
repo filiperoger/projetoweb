@@ -18,7 +18,7 @@ public class UsuarioController extends HttpServlet{
 	private UsuarioDAO dao;
     private static final long serialVersionUID = 1L;
     public static final String INSERIR = "/usuario.jsp";
-    public static final String LISTAR_USUARIO = "pages/usuario.jsp";
+    public static final String LISTAR_USUARIO = "usuario.jsp";
     public static final String EDITAR = "/editarUsuario.jsp";
     
     public UsuarioController() {

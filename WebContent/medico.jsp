@@ -33,12 +33,10 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Cadastro <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="<%=request.getContextPath()%>/pages/agenda.jsp">Agenda</a></li>
-							<li><a href="<%=request.getContextPath()%>/pages/medico.jsp">Médico</a></li>
-							<li><a
-								href="<%=request.getContextPath()%>/pages/paciente.jsp">Paciente</a></li>
-							<li><a
-								href="<%=request.getContextPath()%>/pages/usuario.jsp">Usuário</a></li>
+							<li><a href="AgendaController.do?action=inserir">Agenda</a></li>
+							<li><a href="MedicoController.do?action=inserir">Médico</a></li>
+							<li><a href="PacienteController.do?action=inserir">Paciente</a></li>
+							<li><a href="UsuarioController.do?action=inserir">Usuário</a></li>
 						</ul></li>
 				</ul>
 			</div>
