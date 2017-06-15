@@ -14,10 +14,10 @@
 		<form class="form-signin" action="LoginServlet" method="post">
 			<h3 class="form-signin-heading">Autenticação do Usuário</h3>
 			<label for="inputEmail" class="sr-only">Email</label> <input
-				type="email" id="inputEmail" class="form-control"
+				type="email" name="inputEmail" class="form-control"
 				placeholder="Email" required autofocus> <label
 				for="inputPassword" class="sr-only">Senha</label> <input
-				type="password" id="inputPassword" class="form-control"
+				type="password" name="inputPassword" class="form-control"
 				placeholder="Senha" required>
 			<button class="btn btn-primary btn-block" type="submit">Entrar</button>
 		</form>

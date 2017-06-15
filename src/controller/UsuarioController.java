@@ -17,7 +17,7 @@ public class UsuarioController extends HttpServlet{
 
 	private UsuarioDAO dao;
     private static final long serialVersionUID = 1L;
-    public static final String LISTAR_USUARIO = "/todosUsuarios.jsp";
+    public static final String LISTAR_USUARIO = "/pages/usuario.jsp";
     public static final String EDITAR = "/editarUsuario.jsp";
     
     public UsuarioController() {
@@ -55,12 +55,10 @@ public class UsuarioController extends HttpServlet{
         usuario.setNome(request.getParameter("nome"));
         usuario.setEmail(request.getParameter("email"));
         usuario.setSenha(request.getParameter("senha"));
-//        String usuarioId = request.getParameter("usuarioId");
  
-        if( usuario.getUsuarioId() == 0)
+        if(usuario.getUsuarioId() == 0)
             dao.adicionar(usuario);
         else {
-//            usuario.setUsuarioId(Integer.parseInt(usuarioId));
             dao.alterar(usuario);
         }
         response.sendRedirect("pages/login.jsp");

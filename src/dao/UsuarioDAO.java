@@ -23,7 +23,7 @@ public class UsuarioDAO{
 
 		try {
 
-			String query = "insert into usuario (nome, email, senha) values (?,?,?)";
+			String query = "insert into usuario (nome, email, senha) values ('?','?','?')";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 
 			preparedStatement.setString(1, usuario.getNome());

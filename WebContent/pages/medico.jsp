@@ -33,6 +33,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Cadastro <span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a href="<%=request.getContextPath()%>/pages/agenda.jsp">Agenda</a></li>
 							<li><a href="<%=request.getContextPath()%>/pages/medico.jsp">Médico</a></li>
 							<li><a
 								href="<%=request.getContextPath()%>/pages/paciente.jsp">Paciente</a></li>
@@ -49,13 +50,21 @@
 		<div class="page-header">
 			<h2>Médico</h2>
 		</div>
-		<form action="PacienteController" method="post">
+		<form action="MedicoController" method="post">
 			<div class="form-group" style="margin-top: 30px;">
 				<label for="nome" class="col-sm-2">Nome: </label>
 				<div class="col-sm-10">
 					<input type="text" name="nome" class="form-control"
 						value="<c:out value="${medico.nome}" />"
 						placeholder="Informe o nome" required autofocus />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="nome" class="col-sm-2">CRM: </label>
+				<div class="col-sm-10">
+					<input type="text" name="crm" class="form-control"
+						value="<c:out value="${medico.crm}" />"
+						placeholder="Informe o CRM" required />
 				</div>
 			</div>
 			<div class="clearfix"></div>

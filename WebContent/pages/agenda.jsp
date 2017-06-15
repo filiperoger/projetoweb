@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Usuário</title>
+<title>Agenda</title>
 <!-- Bootstrap core CSS -->
 <link
 	href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css"
@@ -48,31 +48,37 @@
 	<!-- Início da página -->
 	<div class="container">
 		<div class="page-header">
-			<h2>Usuário</h2>
+			<h2>Agenda</h2>
 		</div>
-		<form action="UsuarioController" method="post">
+		<form action="AgendaController" method="post">
 			<div class="form-group" style="margin-top: 30px;">
-				<label for="nome" class="col-sm-2">Nome: </label>
+				<label for="nome" class="col-sm-2">Paciente: </label>
 				<div class="col-sm-10">
-					<input type="text" name="nome" class="form-control"
-						value="<c:out value="${usuario.nome}" />"
-						placeholder="Informe o nome" required autofocus />
+					<select name="slPaciente" class="form-control" required>
+						<option value="">[Selecione]</option>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="nome" class="col-sm-2">E-mail: </label>
+				<label for="nome" class="col-sm-2">Médico: </label>
 				<div class="col-sm-10">
-					<input type="email" name="email" class="form-control"
-						value="<c:out value="${usuario.email}" />"
-						placeholder="Informe o e-mail" required />
+					<select name="slMedico" class="form-control" required>
+						<option value="">[Selecione]</option>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="nome" class="col-sm-2">Senha: </label>
+				<label for="nome" class="col-sm-2">Data: </label>
 				<div class="col-sm-10">
-					<input type="password" name="senha" class="form-control"
-						value="<c:out value="${usuario.senha}" />"
-						placeholder="Informe a senha" required />
+					<input type="date" name="data" class="form-control"
+						value="<c:out value="${agenda.data}" />" required />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="nome" class="col-sm-2">Hora: </label>
+				<div class="col-sm-10">
+					<input type="time" name="hora" class="form-control"
+						value="<c:out value="${agenda.hora}" />" required />
 				</div>
 			</div>
 			<div class="clearfix"></div>

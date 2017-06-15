@@ -33,6 +33,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Cadastro <span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a href="<%=request.getContextPath()%>/pages/agenda.jsp">Agenda</a></li>
 							<li><a href="<%=request.getContextPath()%>/pages/medico.jsp">Médico</a></li>
 							<li><a
 								href="<%=request.getContextPath()%>/pages/paciente.jsp">Paciente</a></li>
@@ -56,6 +57,22 @@
 					<input type="text" name="nome" class="form-control"
 						value="<c:out value="${paciente.nome}" />"
 						placeholder="Informe o nome" required autofocus />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="nome" class="col-sm-2">CPF: </label>
+				<div class="col-sm-10">
+					<input type="text" name="cpf" class="form-control"
+						value="<c:out value="${paciente.cpf}" />"
+						placeholder="Informe o CPF" required />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="nome" class="col-sm-2">RG: </label>
+				<div class="col-sm-10">
+					<input type="text" name="rg" class="form-control"
+						value="<c:out value="${paciente.rg}" />"
+						placeholder="Informe o RG" required />
 				</div>
 			</div>
 			<div class="clearfix"></div>

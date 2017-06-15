@@ -21,16 +21,16 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 
-		String email = request.getParameter("email");
-		String senha = request.getParameter("senha");
+		String email = request.getParameter("inputEmail");
+		String senha = request.getParameter("inputPassword");
 		Usuario usuario = LoginDAO.checkUser(email, senha);
 
 		if(usuario != null){
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("pages/index.jsp");
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("sessaoUsuario",usuario);
 		}else{
-			RequestDispatcher rs = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher rs = request.getRequestDispatcher("pages/login.jsp");
 			rs.include(request, response);
 		}
 	}  
