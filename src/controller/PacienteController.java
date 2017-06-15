@@ -17,6 +17,7 @@ public class PacienteController extends HttpServlet {
 	
 	private PacienteDAO dao;
     private static final long serialVersionUID = 1L;
+	public static final String INSERIR = "/paciente.jsp";
     public static final String LISTAR_PACIENTE = "/todosPacientes.jsp";
     public static final String EDITAR = "/editarPaciente.jsp";
     
@@ -41,6 +42,9 @@ public class PacienteController extends HttpServlet {
             Paciente paciente = dao.buscarPorId(pacienteId);
             request.setAttribute("paciente", paciente);
         }
+		else if( action.equalsIgnoreCase("inserir")) {
+            forward = INSERIR;
+        }
         else {
             forward = LISTAR_PACIENTE;
             request.setAttribute("pacientes", dao.listarTodos());
@@ -53,10 +57,10 @@ public class PacienteController extends HttpServlet {
 		
 		Paciente paciente = new Paciente();
         paciente.setNome(request.getParameter("nome"));
-        paciente.setCpf(Integer.parseInt(request.getParameter("cpf")));
-        paciente.setRg(Integer.parseInt(request.getParameter("rg")));
+        paciente.setCpf(request.getParameter("cpf"));
+        paciente.setRg(request.getParameter("rg"));
  
-        if( paciente.getPacienteId() == 0)
+        if(paciente.getPacienteId() == 0)
             dao.adicionar(paciente);
         else {
             dao.alterar(paciente);

@@ -65,6 +65,14 @@
 						placeholder="Informe o CRM" required />
 				</div>
 			</div>
+			<div class="form-group">
+				<label for="nome" class="col-sm-2">Médico: </label>
+				<div class="col-sm-10">
+					<select name="slMedico" class="form-control" required>
+						<option value="">[Selecione]</option>
+					</select>
+				</div>
+			</div>
 			<div class="clearfix"></div>
 			<div class="form-group" style="margin-top: 10px;">
 				<div class="col-sm-offset-2 col-sm-10">

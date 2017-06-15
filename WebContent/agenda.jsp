@@ -58,14 +58,6 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="nome" class="col-sm-2">Médico: </label>
-				<div class="col-sm-10">
-					<select name="slMedico" class="form-control" required>
-						<option value="">[Selecione]</option>
-					</select>
-				</div>
-			</div>
-			<div class="form-group">
 				<label for="nome" class="col-sm-2">Data: </label>
 				<div class="col-sm-10">
 					<input type="date" name="data" class="form-control"

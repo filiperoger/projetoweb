@@ -42,7 +42,7 @@ public class MedicoController extends HttpServlet {
 			Medico medico = dao.buscarPorId(medicoId);
 			request.setAttribute("medico", medico);
 		}
-		else if( action.equalsIgnoreCase( "inserir" ) ) {
+		else if( action.equalsIgnoreCase("inserir")) {
             forward = INSERIR;
         }
 		else {
@@ -59,7 +59,7 @@ public class MedicoController extends HttpServlet {
         medico.setNome(request.getParameter("nome"));
         medico.setCrm(request.getParameter("crm"));
  
-        if( medico.getMedicoId() == 0)
+        if(medico.getMedicoId() == 0)
             dao.adicionar(medico);
         else {
             dao.alterar(medico);
