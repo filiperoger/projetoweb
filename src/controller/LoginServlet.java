@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 		Usuario usuario = LoginDAO.checkUser(email, senha);
 
 		if(usuario != null){
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("pages/index.jsp");
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("sessaoUsuario",usuario);
 		}else{
