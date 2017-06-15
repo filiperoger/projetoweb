@@ -33,6 +33,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Cadastro <span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a href="<%=request.getContextPath()%>/pages/agenda.jsp">Agenda</a></li>
 							<li><a href="<%=request.getContextPath()%>/pages/medico.jsp">Médico</a></li>
 							<li><a
 								href="<%=request.getContextPath()%>/pages/paciente.jsp">Paciente</a></li>
@@ -49,7 +50,7 @@
 		<div class="page-header">
 			<h2>Usuário</h2>
 		</div>
-		<form action="UsuarioController" method="post">
+		<form action="UsuarioController.do" method="post">
 			<div class="form-group" style="margin-top: 30px;">
 				<label for="nome" class="col-sm-2">Nome: </label>
 				<div class="col-sm-10">

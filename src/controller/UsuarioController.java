@@ -55,14 +55,12 @@ public class UsuarioController extends HttpServlet{
         usuario.setNome(request.getParameter("nome"));
         usuario.setEmail(request.getParameter("email"));
         usuario.setSenha(request.getParameter("senha"));
-//        String usuarioId = request.getParameter("usuarioId");
  
-        if( usuario.getUsuarioId() == 0)
+        if(usuario.getUsuarioId() == 0)
             dao.adicionar(usuario);
         else {
-//            usuario.setUsuarioId(Integer.parseInt(usuarioId));
             dao.alterar(usuario);
         }
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("pages/login.jsp");
     }
  }
