@@ -48,7 +48,7 @@
 		<div class="page-header">
 			<h2>Médico</h2>
 		</div>
-		<form action="MedicoController" method="post">
+		<form action="MedicoController.do" method="post">
 			<div class="form-group" style="margin-top: 30px;">
 				<label for="nome" class="col-sm-2">Nome: </label>
 				<div class="col-sm-10">

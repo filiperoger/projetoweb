@@ -61,6 +61,6 @@ public class PacienteController extends HttpServlet {
         else {
             dao.alterar(paciente);
         }
-        response.sendRedirect("login.jsp");
+//        response.sendRedirect("login.jsp");
 	}
 }
