@@ -2,13 +2,24 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>ProjetoFinal</display-name>
   <welcome-file-list>
+<<<<<<< HEAD
     <!--<welcome-file>pages/login.jsp</welcome-file>-->
     <welcome-file>pages/index.jsp</welcome-file>
+=======
+    <welcome-file>pages/login.jsp</welcome-file>
+>>>>>>> 895ed61143ae5a54dc4c57a374bdbee69ff78998
   </welcome-file-list>
   <servlet>
     <servlet-name>UsuarioController</servlet-name>
     <servlet-class>controller.UsuarioController</servlet-class>
   </servlet>
+<<<<<<< HEAD
+=======
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>controller.LoginServlet</servlet-class>
+  </servlet>
+>>>>>>> 895ed61143ae5a54dc4c57a374bdbee69ff78998
   <servlet-mapping>
     <servlet-name>UsuarioController</servlet-name>
     <url-pattern>/UsuarioController.do</url-pattern>
