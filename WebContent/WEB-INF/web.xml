@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>ProjetoFinal</display-name>  
   <welcome-file-list>
-    <welcome-file>pages/login.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
   
   <servlet>
@@ -30,8 +30,13 @@
     <servlet-class>controller.UsuarioController</servlet-class>
   </servlet>
   
-  <!--<servlet-mapping>
+  <servlet-mapping>
     <servlet-name>UsuarioController</servlet-name>
     <url-pattern>/UsuarioController.do</url-pattern>
-  </servlet-mapping>-->
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>MedicoController</servlet-name>
+    <url-pattern>/MedicoController.do</url-pattern>
+  </servlet-mapping>
 </web-app>

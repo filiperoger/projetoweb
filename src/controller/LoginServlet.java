@@ -26,11 +26,11 @@ public class LoginServlet extends HttpServlet {
 		Usuario usuario = LoginDAO.checkUser(email, senha);
 
 		if(usuario != null){
-			response.sendRedirect("pages/index.jsp");
+			response.sendRedirect("index.jsp");
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("sessaoUsuario",usuario);
 		}else{
-			RequestDispatcher rs = request.getRequestDispatcher("pages/login.jsp");
+			RequestDispatcher rs = request.getRequestDispatcher("login.jsp");
 			rs.include(request, response);
 		}
 	}  

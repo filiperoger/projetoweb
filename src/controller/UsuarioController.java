@@ -17,7 +17,8 @@ public class UsuarioController extends HttpServlet{
 
 	private UsuarioDAO dao;
     private static final long serialVersionUID = 1L;
-    public static final String LISTAR_USUARIO = "/pages/usuario.jsp";
+    public static final String INSERIR = "/usuario.jsp";
+    public static final String LISTAR_USUARIO = "pages/usuario.jsp";
     public static final String EDITAR = "/editarUsuario.jsp";
     
     public UsuarioController() {
@@ -41,6 +42,9 @@ public class UsuarioController extends HttpServlet{
             Usuario usuario = dao.buscarPorId(usuarioId);
             request.setAttribute("usuario", usuario);
         }
+        else if( action.equalsIgnoreCase( "inserir" ) ) {
+            forward = INSERIR;
+        }
         else {
             forward = LISTAR_USUARIO;
             request.setAttribute("usuarios", dao.listarTodos());
@@ -56,11 +60,12 @@ public class UsuarioController extends HttpServlet{
         usuario.setEmail(request.getParameter("email"));
         usuario.setSenha(request.getParameter("senha"));
  
-        if(usuario.getUsuarioId() == 0)
+        if(usuario.getUsuarioId() == 0){
             dao.adicionar(usuario);
+        }
         else {
             dao.alterar(usuario);
         }
-        response.sendRedirect("pages/login.jsp");
+        response.sendRedirect("login.jsp");
     }
  }

@@ -17,6 +17,7 @@ public class MedicoController extends HttpServlet {
 
 	private MedicoDAO dao;
 	private static final long serialVersionUID = 1L;
+	public static final String INSERIR = "/pages/medico.jsp";
 	public static final String LISTAR_MEDICO = "/todosMedicos.jsp";
 	public static final String EDITAR = "/editarMedicos.jsp";
 
@@ -48,6 +49,9 @@ public class MedicoController extends HttpServlet {
 			Medico medico = dao.buscarPorId(medicoId);
 			request.setAttribute("usuario", medico);
 		}
+		else if( action.equalsIgnoreCase( "inserir" ) ) {
+            forward = INSERIR;
+        }
 		else {
 			forward = LISTAR_MEDICO;
 			request.setAttribute("usuarios", dao.listarTodos());
