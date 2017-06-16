@@ -40,14 +40,14 @@ public class MedicoController extends HttpServlet {
 			forward = EDITAR;
 			int medicoId = Integer.parseInt(request.getParameter("medicoId"));
 			Medico medico = dao.buscarPorId(medicoId);
-			request.setAttribute("usuario", medico);
+			request.setAttribute("medico", medico);
 		}
 		else if( action.equalsIgnoreCase( "inserir" ) ) {
             forward = INSERIR;
         }
 		else {
 			forward = LISTAR_MEDICO;
-			request.setAttribute("usuarios", dao.listarTodos());
+			request.setAttribute("medicos", dao.listarTodos());
 		}
 		RequestDispatcher view = request.getRequestDispatcher(forward);
 		view.forward(request, response);
