@@ -7,34 +7,30 @@ public class Usuario {
 	private String email;
 	private String senha;
 	
-	public String getEmail() {
-		return email;
+	public Integer getUsuarioId() {
+		return usuarioId;
 	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsuarioId(Integer usuarioId) {
+		this.usuarioId = usuarioId;
 	}
 
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public Integer getUsuarioId() {
-		return usuarioId;
+	public String getEmail() {
+		return email;
 	}
-
-	public void setUsuarioId(Integer usuarioId) {
-		this.usuarioId = usuarioId;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
+	
 	public String getSenha() {
 		return senha;
 	}
-
 	public void setSenha(String senha) {
 		this.senha = senha;
 	} 

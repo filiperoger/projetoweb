@@ -54,11 +54,10 @@ public class UsuarioController extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		Usuario	usuario = new Usuario();
-
+        String usuarioId = request.getParameter("usuarioId");
 		usuario.setNome(request.getParameter("nome"));
 		usuario.setEmail(request.getParameter("email"));
 		usuario.setSenha(request.getParameter("senha"));
-        String usuarioId = request.getParameter("usuarioId");
         
         if(usuarioId == null || usuarioId.isEmpty())
             dao.adicionar(usuario);

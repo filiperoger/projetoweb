@@ -6,13 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Médico</title>
+
 <!-- Bootstrap core CSS -->
-<link
-	href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/bootstrap/css/sticky-footer-navbar.css"
-	rel="stylesheet">
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -33,16 +31,15 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Cadastro <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="AgendaController.do?action=inserir">Agenda</a></li>
-							<li><a href="MedicoController.do?action=inserir">Médico</a></li>
-							<li><a href="PacienteController.do?action=inserir">Paciente</a></li>
-							<li><a href="UsuarioController.do?action=inserir">Usuário</a></li>
+							<li><a href="AgendaController.do?action=">Agenda</a></li>
+							<li><a href="MedicoController.do?action=">Médico</a></li>
+							<li><a href="PacienteController.do?action=">Paciente</a></li>
+							<li><a href="UsuarioController.do?action=">Usuário</a></li>
 						</ul></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-
 	<!-- Início da página -->
 	<div class="container">
 		<div class="page-header">
@@ -50,6 +47,14 @@
 		</div>
 		<form action="MedicoController.do" method="post">
 			<div class="form-group" style="margin-top: 30px;">
+				<label for="medicoId" class="col-sm-2">Matrícula:</label>
+				<div class="col-sm-10">
+					<input type="text" name="medicoId" class="form-control"
+						value="<c:out value="${medico.medicoId}" />" readonly="readonly" />
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="form-group" style="margin-top: 5px;">
 				<label for="nome" class="col-sm-2">Nome: </label>
 				<div class="col-sm-10">
 					<input type="text" name="nome" class="form-control"
@@ -57,20 +62,13 @@
 						placeholder="Informe o nome" required autofocus />
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="nome" class="col-sm-2">CRM: </label>
+			<div class="clearfix"></div>
+			<div class="form-group" style="margin-top: 5px;">
+				<label for="crm" class="col-sm-2">CRM: </label>
 				<div class="col-sm-10">
 					<input type="text" name="crm" class="form-control"
 						value="<c:out value="${medico.crm}" />"
 						placeholder="Informe o CRM" required />
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="nome" class="col-sm-2">Médico: </label>
-				<div class="col-sm-10">
-					<select name="slMedico" class="form-control" required>
-						<option value="">[Selecione]</option>
-					</select>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -79,6 +77,37 @@
 					<input type="submit" value="Salvar" class="btn btn-primary" /> <input
 						type="reset" value="Cancelar" class="btn btn-primary" />
 				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-sm-12">
+				<table class="table table-bordered" style="margin-top: 20px;">
+					<thead>
+						<tr>
+							<th colspan="5" style="text-align: center;">Médico</th>
+						</tr>
+						<tr>
+							<th></th>
+							<th></th>
+							<th style="text-align: center;">Mat.</th>
+							<th>Nome</th>
+							<th>CRM</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${medicos}" var="medico">
+							<tr>
+								<td class="col-sm-1"><a
+									href="MedicoController.do?action=editar&medicoId=<c:out value="${medico.medicoId}"/>">Editar</a></td>
+								<td class="col-sm-1"><a
+									href="MedicoController.do?action=deletar&medicoId=<c:out value="${medico.medicoId}"/>">Excluir</a></td>
+								<td class="col-sm-1" style="text-align: center;"><c:out
+										value="${medico.medicoId}" /></td>
+								<td><c:out value="${medico.nome}" /></td>
+								<td><c:out value="${medico.crm}" /></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
 		</form>
 	</div>
@@ -90,8 +119,7 @@
 	</footer>
 
 	<!-- Core JS -->
-	<script src="<%=request.getContextPath()%>/bootstrap/js/jquery.min.js"></script>
-	<script
-		src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

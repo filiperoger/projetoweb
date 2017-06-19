@@ -18,8 +18,8 @@ public class MedicoController extends HttpServlet {
 	private MedicoDAO dao;
 	private static final long serialVersionUID = 1L;
 	public static final String INSERIR = "/medico.jsp";
-	public static final String LISTAR_MEDICO = "/todosMedicos.jsp";
-	public static final String EDITAR = "/editarMedicos.jsp";
+	public static final String LISTAR_MEDICO = "/medico.jsp";
+	public static final String EDITAR = "/medico.jsp";
 
 	public MedicoController() {
 		dao = new MedicoDAO();
@@ -43,8 +43,8 @@ public class MedicoController extends HttpServlet {
 			request.setAttribute("medico", medico);
 		}
 		else if( action.equalsIgnoreCase("inserir")) {
-            forward = INSERIR;
-        }
+			forward = INSERIR;
+		}
 		else {
 			forward = LISTAR_MEDICO;
 			request.setAttribute("medicos", dao.listarTodos());
@@ -54,16 +54,18 @@ public class MedicoController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		Medico medico = new Medico();
-        medico.setNome(request.getParameter("nome"));
-        medico.setCrm(request.getParameter("crm"));
- 
-        if(medico.getMedicoId() == 0)
-            dao.adicionar(medico);
-        else {
-            dao.alterar(medico);
-        }
-//        response.sendRedirect("login.jsp");
-    }
+		String medicoId = request.getParameter("medicoId");
+		medico.setNome(request.getParameter("nome"));
+		medico.setCrm(request.getParameter("crm"));
+
+		if(medicoId == null || medicoId.isEmpty())
+			dao.adicionar(medico);
+		else {
+			medico.setMedicoId(Integer.parseInt(medicoId));
+			dao.alterar(medico);
+		}
+		response.sendRedirect("MedicoController.do?action=");
+	}
 }

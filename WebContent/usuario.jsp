@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Usuário</title>
+
 <!-- Bootstrap core CSS -->
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,10 +31,10 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Cadastro <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="AgendaController.do?action=inserir">Agenda</a></li>
-							<li><a href="MedicoController.do?action=inserir">Médico</a></li>
-							<li><a href="PacienteController.do?action=inserir">Paciente</a></li>
-							<li><a href="UsuarioController.do?action=inserir">Usuário</a></li>
+							<li><a href="AgendaController.do?action=">Agenda</a></li>
+							<li><a href="MedicoController.do?action=">Médico</a></li>
+							<li><a href="PacienteController.do?action=">Paciente</a></li>
+							<li><a href="UsuarioController.do?action=">Usuário</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -49,8 +50,8 @@
 			<div class="form-group" style="margin-top: 30px;">
 				<label class="col-sm-2">Matrícula:</label>
 				<div class="col-sm-10">
-					<input type="text" name="id" class="form-control"
-						value="<c:out value="${usuario.usuarioId}" />" disabled />
+					<input type="text" name="usuarioId" class="form-control"
+						value="<c:out value="${usuario.usuarioId}" />" readonly="readonly" />
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -89,7 +90,6 @@
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-sm-12">
-
 				<table class="table table-bordered" style="margin-top: 20px;">
 					<thead>
 						<tr>

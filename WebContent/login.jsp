@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <title>Login</title>
 <!-- Bootstrap core CSS -->
-<link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
@@ -24,7 +24,7 @@
 	</div>
 
 	<!-- Core JS -->
-	<script src="<%=request.getContextPath()%>/bootstrap/js/jquery.min.js"></script>
-	<script	src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
