@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import model.Agenda;
@@ -26,7 +25,7 @@ public class AgendaDAO {
 			String query = "insert into agenda (data, hora, pacienteId, medicoId) values (?, ?, ?, ?)";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 
-			preparedStatement.setDate(1, agenda.getData());
+			preparedStatement.setDate(1, new java.sql.Date(agenda.getData().getTime()));
 			preparedStatement.setTime(2, agenda.getHora());
 			preparedStatement.setInt(3, agenda.getPacienteId());
 			preparedStatement.setInt(4, agenda.getMedicoId());

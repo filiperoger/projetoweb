@@ -65,11 +65,10 @@ public class AgendaController extends HttpServlet{
 
 		Agenda agenda = new Agenda();
         String agendaId = request.getParameter("agendaId");
-        agenda.setData(request.getParameter("data"));
-        agenda.setHora(request.getParameter("hora"));
-        
         agenda.setPacienteId(Integer.parseInt(request.getParameter("slPaciente")));
         agenda.setMedicoId(Integer.parseInt(request.getParameter("slMedico")));
+//        agenda.setData(request.getParameter("data"));
+//        agenda.setHora(request.getParameter("hora"));
         
         if(agendaId == null || agendaId.isEmpty())
             dao.adicionar(agenda);
