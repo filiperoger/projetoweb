@@ -7,8 +7,8 @@ public class Agenda {
 	private Integer agendaId;
 	private Date data;
 	private Time hora;
-	private Paciente paciente;
-	private Medico medico;
+	private Integer pacienteId;
+	private Integer medicoId;
 	
 	public Integer getAgendaId() {
 		return agendaId;
@@ -24,24 +24,24 @@ public class Agenda {
 		this.data = data;
 	}
 	
-	public Paciente getPaciente() {
-		return paciente;
-	}
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
-	}
-	
-	public Medico getMedico() {
-		return medico;
-	}
-	public void setMedico(Medico medico) {
-		this.medico = medico;
-	}
-	
 	public Time getHora() {
 		return hora;
 	}
 	public void setHora(Time hora) {
 		this.hora = hora;
+	}
+	
+	public Integer getPacienteId() {
+		return pacienteId;
+	}
+	public void setPacienteId(Integer pacienteId) {
+		this.pacienteId = pacienteId;
+	}
+	
+	public Integer getMedicoId() {
+		return medicoId;
+	}
+	public void setMedicoId(Integer medicoId) {
+		this.medicoId = medicoId;
 	}
 }
