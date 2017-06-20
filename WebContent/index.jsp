@@ -2,19 +2,17 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<link rel="shortcut icon" href="image/unimedicon.png" >
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UniMed</title>
 
 <!-- Bootstrap core CSS -->
-<link
-	href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/bootstrap/css/sticky-footer-navbar.css"
-	rel="stylesheet">
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
 </head>
-
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
@@ -34,10 +32,10 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Cadastro <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="AgendaController.do?action=inserir">Agenda</a></li>
-							<li><a href="MedicoController.do?action=inserir">Médico</a></li>
-							<li><a href="PacienteController.do?action=inserir">Paciente</a></li>
-							<li><a href="UsuarioController.do?action=inserir">Usuário</a></li>
+							<li><a href="AgendaController.do?action=">Agenda</a></li>
+							<li><a href="MedicoController.do?action=">Médico</a></li>
+							<li><a href="PacienteController.do?action=">Paciente</a></li>
+							<li><a href="UsuarioController.do?action=">Usuário</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -58,8 +56,7 @@
 	</footer>
 
 	<!-- Core JS -->
-	<script src="<%=request.getContextPath()%>/bootstrap/js/jquery.min.js"></script>
-	<script
-		src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

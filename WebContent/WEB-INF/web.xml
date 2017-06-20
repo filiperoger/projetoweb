@@ -8,6 +8,15 @@
     <servlet-name>AgendaController</servlet-name>
     <servlet-class>controller.AgendaController</servlet-class>
   </servlet>
+<<<<<<< HEAD
+=======
+  
+  <servlet-mapping>
+    <servlet-name>AgendaController</servlet-name>
+    <url-pattern>/AgendaController.do</url-pattern>
+  </servlet-mapping>
+  
+>>>>>>> c503e3c3ca010880d197a8a63876488ee0af128b
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>controller.LoginServlet</servlet-class>
@@ -16,10 +25,28 @@
     <servlet-name>MedicoController</servlet-name>
     <servlet-class>controller.MedicoController</servlet-class>
   </servlet>
+<<<<<<< HEAD
+=======
+  
+  <servlet-mapping>
+    <servlet-name>MedicoController</servlet-name>
+    <url-pattern>/MedicoController.do</url-pattern>
+  </servlet-mapping>
+  
+>>>>>>> c503e3c3ca010880d197a8a63876488ee0af128b
   <servlet>
     <servlet-name>PacienteController</servlet-name>
     <servlet-class>controller.PacienteController</servlet-class>
   </servlet>
+<<<<<<< HEAD
+=======
+  
+  <servlet-mapping>
+    <servlet-name>PacienteController</servlet-name>
+    <url-pattern>/PacienteController.do</url-pattern>
+  </servlet-mapping>
+  
+>>>>>>> c503e3c3ca010880d197a8a63876488ee0af128b
   <servlet>
     <servlet-name>UsuarioController</servlet-name>
     <servlet-class>controller.UsuarioController</servlet-class>
@@ -28,8 +55,12 @@
     <servlet-name>UsuarioController</servlet-name>
     <url-pattern>/UsuarioController.do</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
   <servlet-mapping>
     <servlet-name>MedicoController</servlet-name>
     <url-pattern>/MedicoController.do</url-pattern>
   </servlet-mapping>
+=======
+  
+>>>>>>> c503e3c3ca010880d197a8a63876488ee0af128b
 </web-app>

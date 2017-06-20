@@ -42,9 +42,9 @@ public class MedicoDAO {
 			String query = "update medico set nome=?, crm=? where medicoId=?";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 			
-			preparedStatement.setInt(1, medico.getMedicoId());
-			preparedStatement.setString(2, medico.getNome());
-			preparedStatement.setString(3, medico.getCrm());
+			preparedStatement.setString(1, medico.getNome());
+			preparedStatement.setString(2, medico.getCrm());
+			preparedStatement.setInt(3, medico.getMedicoId());
 			
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
@@ -112,7 +112,7 @@ public class MedicoDAO {
 
 			while(resultSet.next()) {
 
-				medico.setMedicoId(resultSet.getInt( "medicoId"));
+				medico.setMedicoId(resultSet.getInt("medicoId"));
 				medico.setNome(resultSet.getString("nome"));
 				medico.setCrm(resultSet.getString("crm"));
 			}

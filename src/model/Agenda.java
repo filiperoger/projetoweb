@@ -8,6 +8,7 @@ public class Agenda {
 	private Date data;
 	private Time hora;
 	private Paciente paciente;
+	private Medico medico;
 	
 	public Integer getAgendaId() {
 		return agendaId;
@@ -28,6 +29,13 @@ public class Agenda {
 	}
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
+	}
+	
+	public Medico getMedico() {
+		return medico;
+	}
+	public void setMedico(Medico medico) {
+		this.medico = medico;
 	}
 	
 	public Time getHora() {

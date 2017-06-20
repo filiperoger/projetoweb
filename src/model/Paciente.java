@@ -4,8 +4,8 @@ public class Paciente {
 
 	private int pacienteId;
 	private String nome;
-	private Integer cpf;
-	private Integer rg;
+	private String cpf;
+	private String rg;
 
 	public int getPacienteId() {
 		return pacienteId;
@@ -13,22 +13,25 @@ public class Paciente {
 	public void setPacienteId(int pacienteId) {
 		this.pacienteId = pacienteId;
 	}
+	
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Integer getCpf() {
+	
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public Integer getRg() {
+	
+	public String getRg() {
 		return rg;
 	}
-	public void setRg(Integer rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 	

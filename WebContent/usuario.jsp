@@ -3,16 +3,16 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<link rel="shortcut icon" href="image/unimedicon.png" >
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Usuário</title>
+
 <!-- Bootstrap core CSS -->
-<link
-	href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/bootstrap/css/sticky-footer-navbar.css"
-	rel="stylesheet">
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -33,10 +33,10 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Cadastro <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="AgendaController.do?action=inserir">Agenda</a></li>
-							<li><a href="MedicoController.do?action=inserir">Médico</a></li>
-							<li><a href="PacienteController.do?action=inserir">Paciente</a></li>
-							<li><a href="UsuarioController.do?action=inserir">Usuário</a></li>
+							<li><a href="AgendaController.do?action=">Agenda</a></li>
+							<li><a href="MedicoController.do?action=">Médico</a></li>
+							<li><a href="PacienteController.do?action=">Paciente</a></li>
+							<li><a href="UsuarioController.do?action=">Usuário</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -50,6 +50,14 @@
 		</div>
 		<form action="UsuarioController.do" method="post">
 			<div class="form-group" style="margin-top: 30px;">
+				<label class="col-sm-2">Matrícula:</label>
+				<div class="col-sm-10">
+					<input type="text" name="usuarioId" class="form-control"
+						value="<c:out value="${usuario.usuarioId}" />" readonly="readonly" />
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="form-group" style="margin-top: 5px;">
 				<label for="nome" class="col-sm-2">Nome: </label>
 				<div class="col-sm-10">
 					<input type="text" name="nome" class="form-control"
@@ -57,7 +65,8 @@
 						placeholder="Informe o nome" required autofocus />
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="clearfix"></div>
+			<div class="form-group" style="margin-top: 5px;">
 				<label for="nome" class="col-sm-2">E-mail: </label>
 				<div class="col-sm-10">
 					<input type="email" name="email" class="form-control"
@@ -65,7 +74,8 @@
 						placeholder="Informe o e-mail" required />
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="clearfix"></div>
+			<div class="form-group" style="margin-top: 5px;">
 				<label for="nome" class="col-sm-2">Senha: </label>
 				<div class="col-sm-10">
 					<input type="password" name="senha" class="form-control"
@@ -80,6 +90,37 @@
 						type="reset" value="Cancelar" class="btn btn-primary" />
 				</div>
 			</div>
+			<div class="clearfix"></div>
+			<div class="col-sm-12">
+				<table class="table table-bordered" style="margin-top: 20px;">
+					<thead>
+						<tr>
+							<th colspan="5" style="text-align: center;">Usuário</th>
+						</tr>
+						<tr>
+							<th></th>
+							<th></th>
+							<th style="text-align: center;">Mat.</th>
+							<th>Nome</th>
+							<th>Email</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${usuarios}" var="usuario">
+							<tr>
+								<td class="col-sm-1"><a
+									href="UsuarioController.do?action=editar&usuarioId=<c:out value="${usuario.usuarioId}"/>">Editar</a></td>
+								<td class="col-sm-1"><a
+									href="UsuarioController.do?action=deletar&usuarioId=<c:out value="${usuario.usuarioId}"/>">Excluir</a></td>
+								<td class="col-sm-1" style="text-align: center;"><c:out
+										value="${usuario.usuarioId}" /></td>
+								<td><c:out value="${usuario.nome}" /></td>
+								<td><c:out value="${usuario.email}" /></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
 		</form>
 	</div>
 
@@ -90,8 +131,7 @@
 	</footer>
 
 	<!-- Core JS -->
-	<script src="<%=request.getContextPath()%>/bootstrap/js/jquery.min.js"></script>
-	<script
-		src="<%=request.getContextPath()%>/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

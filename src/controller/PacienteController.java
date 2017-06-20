@@ -17,8 +17,9 @@ public class PacienteController extends HttpServlet {
 	
 	private PacienteDAO dao;
     private static final long serialVersionUID = 1L;
-    public static final String LISTAR_PACIENTE = "/todosPacientes.jsp";
-    public static final String EDITAR = "/editarPaciente.jsp";
+	public static final String INSERIR = "/paciente.jsp";
+    public static final String LISTAR_PACIENTE = "/paciente.jsp";
+    public static final String EDITAR = "/paciente.jsp";
     
     public PacienteController() {
         dao = new PacienteDAO();
@@ -41,6 +42,9 @@ public class PacienteController extends HttpServlet {
             Paciente paciente = dao.buscarPorId(pacienteId);
             request.setAttribute("paciente", paciente);
         }
+		else if( action.equalsIgnoreCase("inserir")) {
+            forward = INSERIR;
+        }
         else {
             forward = LISTAR_PACIENTE;
             request.setAttribute("pacientes", dao.listarTodos());
@@ -52,15 +56,17 @@ public class PacienteController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Paciente paciente = new Paciente();
+		String pacienteId = request.getParameter("pacienteId");
         paciente.setNome(request.getParameter("nome"));
-        paciente.setCpf(Integer.parseInt(request.getParameter("cpf")));
-        paciente.setRg(Integer.parseInt(request.getParameter("rg")));
+        paciente.setCpf(request.getParameter("cpf"));
+        paciente.setRg(request.getParameter("rg"));
  
-        if( paciente.getPacienteId() == 0)
-            dao.adicionar(paciente);
-        else {
-            dao.alterar(paciente);
-        }
-        response.sendRedirect("login.jsp");
+		if(pacienteId == null || pacienteId.isEmpty())
+			dao.adicionar(paciente);
+		else {
+			paciente.setPacienteId(Integer.parseInt(pacienteId));
+			dao.alterar(paciente);
+		}
+		response.sendRedirect("PacienteController.do?action=");
 	}
 }

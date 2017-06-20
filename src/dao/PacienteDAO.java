@@ -26,8 +26,8 @@ public class PacienteDAO {
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 
 			preparedStatement.setString(1, paciente.getNome());
-			preparedStatement.setInt(2, paciente.getCpf());
-			preparedStatement.setInt(3, paciente.getRg());
+			preparedStatement.setString(2, paciente.getCpf());
+			preparedStatement.setString(3, paciente.getRg());
 
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
@@ -44,8 +44,8 @@ public class PacienteDAO {
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 
 			preparedStatement.setString(1, paciente.getNome());
-			preparedStatement.setInt(2, paciente.getCpf());
-			preparedStatement.setInt(3, paciente.getRg());
+			preparedStatement.setString(2, paciente.getCpf());
+			preparedStatement.setString(3, paciente.getRg());
 			preparedStatement.setInt(4, paciente.getPacienteId());
 
 			preparedStatement.executeUpdate();
@@ -84,8 +84,8 @@ public class PacienteDAO {
 				Paciente paciente = new Paciente();
 				paciente.setPacienteId (resultSet.getInt("pacienteId"));
 				paciente.setNome(resultSet.getString("nome"));
-				paciente.setCpf(resultSet.getInt("cpf"));
-				paciente.setRg(resultSet.getInt("rg"));
+				paciente.setCpf(resultSet.getString("cpf"));
+				paciente.setRg(resultSet.getString("rg"));
 
 				pacientes.add(paciente);
 			}
@@ -114,10 +114,10 @@ public class PacienteDAO {
 
 			while(resultSet.next()) {
 
-				paciente.setPacienteId(resultSet.getInt( "usuarioId"));
+				paciente.setPacienteId(resultSet.getInt("pacienteId"));
 				paciente.setNome(resultSet.getString("nome"));
-				paciente.setCpf(Integer.parseInt(resultSet.getString("cpf")));
-				paciente.setRg(Integer.parseInt(resultSet.getString("rg")));
+				paciente.setCpf(resultSet.getString("cpf"));
+				paciente.setRg(resultSet.getString("rg"));
 			}
 
 			resultSet.close();
