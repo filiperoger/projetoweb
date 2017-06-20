@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-<link rel="shortcut icon" href="image/unimedicon.png" >
+<link rel="shortcut icon" href="image/unimedicon.png">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,6 +62,9 @@
 				<div class="col-sm-10">
 					<select name="slPaciente" class="form-control" required>
 						<option value="">[Selecione]</option>
+						<c:forEach items="${pacientes}" var="paciente">
+							<option value="<c:out value="${paciente.pacienteId}" />"><c:out	value="${paciente.nome}" /></option>
+						</c:forEach>
 					</select>
 				</div>
 			</div>
@@ -71,6 +74,9 @@
 				<div class="col-sm-10">
 					<select name="slMedico" class="form-control" required>
 						<option value="">[Selecione]</option>
+						<c:forEach items="${medicos}" var="medico">
+							<option value="<c:out value="${medico.medicoId}" />"><c:out	value="${medico.nome}" /></option>
+						</c:forEach>
 					</select>
 				</div>
 			</div>
@@ -123,8 +129,8 @@
 									href="AgendaController.do?action=deletar&agendaId=<c:out value="${agenda.agendaId}"/>">Excluir</a></td>
 								<td class="col-sm-1" style="text-align: center;"><c:out
 										value="${agenda.agendaId}" /></td>
-								<td><c:out value="${agenda.paciente}" /></td>
-								<td><c:out value="${agenda.medico}" /></td>
+								<td><c:out value="${agenda.pacienteId}" /></td>
+								<td><c:out value="${agenda.medicoId}" /></td>
 								<td><c:out value="${agenda.data}" /></td>
 								<td><c:out value="${agenda.hora}" /></td>
 							</tr>
