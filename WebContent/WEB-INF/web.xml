@@ -4,6 +4,7 @@
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <servlet-name>AgendaController</servlet-name>
     <servlet-class>controller.AgendaController</servlet-class>
@@ -13,6 +14,11 @@
     <servlet-name>AgendaController</servlet-name>
     <url-pattern>/AgendaController.do</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CadastroServlet</servlet-name>
+    <servlet-class>controller.CadastroServlet</servlet-class>
+  </servlet>
   
   <servlet>
     <servlet-name>LoginServlet</servlet-name>

@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Usuario;
 import dao.UsuarioDAO;
+import model.Usuario;
 
 @WebServlet("/CadastroServlet")
 public class CadastroServlet extends HttpServlet {
-	
+
 	private UsuarioDAO dao;
 	private static final long serialVersionUID = 1L;
 
@@ -22,18 +22,14 @@ public class CadastroServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		Usuario usuario = new Usuario();
-		usuario.setNome(request.getParameter("nome"));
-		usuario.setEmail(request.getParameter("email"));
-		usuario.setSenha(request.getParameter("senha"));
 
-		if(usuario.getUsuarioId() == 0){
-			dao.adicionar(usuario);
-		}
-		else {
-			dao.alterar(usuario);
-		}
+		Usuario usuario = new Usuario();
+		usuario.setNome(request.getParameter("inputNome"));
+		usuario.setEmail(request.getParameter("inputEmail"));
+		usuario.setSenha(request.getParameter("inputPassword"));
+
+		dao.adicionar(usuario);
+
 		response.sendRedirect("login.jsp");
 	}
 }

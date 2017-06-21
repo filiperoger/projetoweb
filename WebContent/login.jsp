@@ -1,7 +1,8 @@
-<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link rel="shortcut icon" href="image/unimedicon.png" >
+<link rel="shortcut icon" href="image/unimedicon.png">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +24,7 @@
 				type="password" name="inputPassword" class="form-control"
 				placeholder="Senha" required>
 			<button class="btn btn-primary btn-block" type="submit">Entrar</button>
-		</form>
-		<form action="CadastroServlet" method="post">
-		<button class="btn btn-primary btn-block" type="submit">Cadastre-se</button>
+			<br>Deseja Criar uma Conta? <a href="/ProjetoFinal/cadastro.jsp">Clique Aqui</a>
 		</form>
 	</div>
 

@@ -25,7 +25,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="<%=request.getContextPath()%>/">UniMed</a>
+				<a class="navbar-brand" href="/ProjetoFinal/index.jsp">UniMed</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -63,7 +63,8 @@
 					<select name="slPaciente" class="form-control" required>
 						<option value="">[Selecione]</option>
 						<c:forEach items="${pacientes}" var="paciente">
-							<option value="<c:out value="${paciente.pacienteId}" />"><c:out	value="${paciente.nome}" /></option>
+							<option value="<c:out value="${paciente.pacienteId}" />"><c:out
+									value="${paciente.nome}" /></option>
 						</c:forEach>
 					</select>
 				</div>
@@ -75,7 +76,8 @@
 					<select name="slMedico" class="form-control" required>
 						<option value="">[Selecione]</option>
 						<c:forEach items="${medicos}" var="medico">
-							<option value="<c:out value="${medico.medicoId}" />"><c:out	value="${medico.nome}" /></option>
+							<option value="<c:out value="${medico.medicoId}" />"><c:out
+									value="${medico.nome}" /></option>
 						</c:forEach>
 					</select>
 				</div>
