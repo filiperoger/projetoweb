@@ -24,6 +24,9 @@
 				placeholder="Senha" required>
 			<button class="btn btn-primary btn-block" type="submit">Entrar</button>
 		</form>
+		<form action="CadastroServlet" method="post">
+		<button class="btn btn-primary btn-block" type="submit">Cadastre-se</button>
+		</form>
 	</div>
 
 	<!-- Core JS -->

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>ProjetoFinal</display-name>  
+  <display-name>ProjetoFinal</display-name>
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <servlet-name>AgendaController</servlet-name>
     <servlet-class>controller.AgendaController</servlet-class>
@@ -24,7 +23,7 @@
     <servlet-name>MedicoController</servlet-name>
     <servlet-class>controller.MedicoController</servlet-class>
   </servlet>
-  
+
   <servlet-mapping>
     <servlet-name>MedicoController</servlet-name>
     <url-pattern>/MedicoController.do</url-pattern>
@@ -34,7 +33,7 @@
     <servlet-name>PacienteController</servlet-name>
     <servlet-class>controller.PacienteController</servlet-class>
   </servlet>
-  
+
   <servlet-mapping>
     <servlet-name>PacienteController</servlet-name>
     <url-pattern>/PacienteController.do</url-pattern>
@@ -49,5 +48,5 @@
     <servlet-name>UsuarioController</servlet-name>
     <url-pattern>/UsuarioController.do</url-pattern>
   </servlet-mapping>
-  
+
 </web-app>
