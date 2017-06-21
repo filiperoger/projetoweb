@@ -25,10 +25,10 @@ public class AgendaDAO {
 			String query = "insert into agenda (data, hora, pacienteId, medicoId) values (?, ?, ?, ?)";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 
-			preparedStatement.setDate(1, new java.sql.Date(agenda.getData().getTime()));
-			preparedStatement.setTime(2, agenda.getHora());
-			preparedStatement.setInt(3, agenda.getPacienteId());
-			preparedStatement.setInt(4, agenda.getMedicoId());
+			preparedStatement.setString(1, agenda.getData());
+			preparedStatement.setString(2, agenda.getHora());
+			preparedStatement.setInt(3, agenda.getPaciente().getPacienteId());
+			preparedStatement.setInt(4, agenda.getMedico().getMedicoId());
 			
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
@@ -44,10 +44,10 @@ public class AgendaDAO {
 			String query = "update agenda set data=?, hora=?, pacienteId=?, medicoId=? where agendaId=?";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 			
-			preparedStatement.setDate(1, new java.sql.Date(agenda.getData().getTime()));
-			preparedStatement.setTime(2, agenda.getHora());
-			preparedStatement.setInt(3, agenda.getPacienteId());
-			preparedStatement.setInt(4, agenda.getMedicoId());
+			preparedStatement.setString(1, agenda.getData());
+			preparedStatement.setString(2, agenda.getHora());
+			preparedStatement.setInt(3, agenda.getPaciente().getPacienteId());
+			preparedStatement.setInt(4, agenda.getMedico().getMedicoId());
 			preparedStatement.setInt(5, agenda.getAgendaId());
 			
 			preparedStatement.executeUpdate();
@@ -86,10 +86,10 @@ public class AgendaDAO {
 				
 				Agenda agenda = new Agenda();
 				agenda.setAgendaId (resultSet.getInt("agendaId"));
-				agenda.setData(resultSet.getDate("data"));
-				agenda.setHora(resultSet.getTime("hora"));
-				agenda.setPacienteId(resultSet.getInt("pacienteId"));
-				agenda.setMedicoId(resultSet.getInt("medicoId"));
+				agenda.setData(resultSet.getString("data"));
+				agenda.setHora(resultSet.getString("hora"));
+			    agenda.setPaciente(new PacienteDAO().buscarPorId(resultSet.getInt("pacienteId")));
+                agenda.setMedico(new MedicoDAO().buscarPorId(resultSet.getInt("medicoId")));
 				
 				agendas.add(agenda);
 			}
@@ -119,10 +119,10 @@ public class AgendaDAO {
 			while(resultSet.next()) {
 
 				agenda.setAgendaId (resultSet.getInt("agendaId"));
-				agenda.setData(resultSet.getDate("data"));
-				agenda.setHora(resultSet.getTime("hora"));
-				agenda.setPacienteId(resultSet.getInt("pacienteId"));
-				agenda.setMedicoId(resultSet.getInt("medicoId"));
+				agenda.setData(resultSet.getString("data"));
+				agenda.setHora(resultSet.getString("hora"));
+                agenda.setPaciente(new PacienteDAO().buscarPorId(resultSet.getInt("pacienteId")));
+                agenda.setMedico(new MedicoDAO().buscarPorId(resultSet.getInt("medicoId")));
 			}
 
 			resultSet.close();

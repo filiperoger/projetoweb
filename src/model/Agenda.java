@@ -1,14 +1,11 @@
 package model;
 
-import java.sql.Time;
-import java.util.Date;
-
 public class Agenda {
 	private Integer agendaId;
-	private Date data;
-	private Time hora;
-	private Integer pacienteId;
-	private Integer medicoId;
+	private String data;
+	private String hora;
+	private Paciente paciente;
+	private Medico medico;
 	
 	public Integer getAgendaId() {
 		return agendaId;
@@ -17,31 +14,31 @@ public class Agenda {
 		this.agendaId = agendaId;
 	}
 	
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	
-	public Time getHora() {
+	public String getHora() {
 		return hora;
 	}
-	public void setHora(Time hora) {
+	public void setHora(String hora) {
 		this.hora = hora;
 	}
 	
-	public Integer getPacienteId() {
-		return pacienteId;
+	public Paciente getPaciente() {
+		return paciente;
 	}
-	public void setPacienteId(Integer pacienteId) {
-		this.pacienteId = pacienteId;
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
 	}
 	
-	public Integer getMedicoId() {
-		return medicoId;
+	public Medico getMedico() {
+		return medico;
 	}
-	public void setMedicoId(Integer medicoId) {
-		this.medicoId = medicoId;
+	public void setMedico(Medico medico) {
+		this.medico = medico;
 	}
 }

@@ -50,7 +50,7 @@
 		</div>
 		<form action="AgendaController.do" method="post">
 			<div class="form-group" style="margin-top: 30px;">
-				<label class="col-sm-2">Matrícula:</label>
+				<label class="col-sm-2">Agenda:</label>
 				<div class="col-sm-10">
 					<input type="text" name="agendaId" class="form-control"
 						value="<c:out value="${agenda.agendaId}" />" readonly="readonly" />
@@ -113,7 +113,7 @@
 						<tr>
 							<th></th>
 							<th></th>
-							<th style="text-align: center;">Mat.</th>
+							<th style="text-align: center;">Agenda</th>
 							<th>Paciente</th>
 							<th>Médico</th>
 							<th>Data</th>
@@ -129,8 +129,8 @@
 									href="AgendaController.do?action=deletar&agendaId=<c:out value="${agenda.agendaId}"/>">Excluir</a></td>
 								<td class="col-sm-1" style="text-align: center;"><c:out
 										value="${agenda.agendaId}" /></td>
-								<td><c:out value="${agenda.pacienteId}" /></td>
-								<td><c:out value="${agenda.medicoId}" /></td>
+								<td><c:out value="${agenda.paciente.nome}" /></td>
+								<td><c:out value="${agenda.medico.nome}" /></td>
 								<td><c:out value="${agenda.data}" /></td>
 								<td><c:out value="${agenda.hora}" /></td>
 							</tr>
