@@ -1,6 +1,12 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -65,8 +71,20 @@ public class AgendaController extends HttpServlet{
 
 		Agenda agenda = new Agenda();
         String agendaId = request.getParameter("agendaId");
-        agenda.setData(request.getParameter("data"));
-        agenda.setHora(request.getParameter("hora"));
+        String dataString = request.getParameter("data");
+        String horaString = request.getParameter("hora");
+        Date dateConvertido = null;
+		try {
+			dateConvertido = (Date) new SimpleDateFormat("dd/MM/yyyy").parse("dataString");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+		LocalTime horaConvertida = LocalTime.parse(request.getParameter("hora"));
+        //Time time = request.getParameter("hora");
+        agenda.setData(dateConvertido);
+        agenda.setHora(horaConvertida);
         
         agenda.setPacienteId(Integer.parseInt(request.getParameter("slPaciente")));
         agenda.setMedicoId(Integer.parseInt(request.getParameter("slMedico")));
