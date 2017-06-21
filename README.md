@@ -5,4 +5,4 @@ Requisitos para o funcionamento:
 *TomCat
 *Eclipse
 
-Para as telas estarem funcionando perfeitamento precisa iniciar o servidor do HSQLDB.
+Para as telas estarem funcionando perfeitamente precisa iniciar o servidor do HSQLDB e executar "carga.sql", a carga só precisa executar uma única vez.
