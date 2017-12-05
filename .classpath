@@ -13,5 +13,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="libs/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="libs/postgresql-9.3-1102.jdbc41.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
