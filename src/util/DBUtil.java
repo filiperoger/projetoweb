@@ -13,10 +13,10 @@ public class DBUtil {
 
 	public static Connection getConnection() {
 
-		if( conn != null )
+		if (conn != null)
 			return conn;
 
-		InputStream inputStream = DBUtil.class.getClassLoader().getResourceAsStream( "/db.properties" );
+		InputStream inputStream = DBUtil.class.getClassLoader().getResourceAsStream("/db.properties");
 		Properties properties = new Properties();
 
 		try {
@@ -27,8 +27,8 @@ public class DBUtil {
 			String user = properties.getProperty("user");
 			String password = properties.getProperty("password");
 
-			Class.forName( driver );
-			conn = DriverManager.getConnection( url, user, password );
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url, user, password);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -43,7 +43,7 @@ public class DBUtil {
 
 	public static void closeConnection(Connection toBeClosed) {
 
-		if(toBeClosed == null)
+		if (toBeClosed == null)
 			return;
 		try {
 			toBeClosed.close();
